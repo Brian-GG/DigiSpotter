@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class MainViewController: UIViewController {
 
     @IBOutlet var timeField: UITextField!
     @IBOutlet var setsField: UITextField!
-    @IBOutlet var repsFields: UITextField!
+    @IBOutlet var repsField: UITextField!
+    
+    var timeVar: String = ""
+    var setsVar: String = ""
+    var repsVar: String = ""
+    
+    private let database = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,24 +37,24 @@ class MainViewController: UIViewController {
         }
         
         if setsField.text?.isEmpty == true{
-            print("Number of sets not set)
+            print("Number of sets not set")
             return
         }
         
-        if repsFields.text?.isEmpty == true{
+        if repsField.text?.isEmpty == true{
             print("Number of reps not set")
             return
         }
         
-        upload()
+        addNewEntry()
     }
                   
-    func upload(){
-        let breakTimeVar = timeField.text
-        let setsVar = setsField.text
-        let repsVar = repsFields.text
+    @objc private func addNewEntry(){
+        timeVar = timeField.text!
+        setsVar = setsField.text!
+        repsVar = repsField.text!
         
-        
+        database.child("something").setValue(timeVar)
     }
     
 }
