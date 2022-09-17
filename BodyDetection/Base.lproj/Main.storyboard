@@ -40,24 +40,29 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MbG-22-Rfv">
-                                <rect key="frame" x="108.5" y="296" width="197.5" height="64.5"/>
+                                <rect key="frame" x="52.5" y="296" width="309" height="103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Augmented Reality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOq-IZ-a1q">
-                                        <rect key="frame" x="27" y="0.0" width="143.5" height="20.5"/>
+                                        <rect key="frame" x="83" y="0.0" width="143.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobility Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCd-wB-ljE">
-                                        <rect key="frame" x="0.0" y="28.5" width="197.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Workout Assisstant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCd-wB-ljE">
+                                        <rect key="frame" x="7" y="28.5" width="295" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This app helps track your workout and form" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPZ-yF-lJb">
+                                        <rect key="frame" x="0.0" y="69" width="309" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rF7-Wm-wEv">
-                                <rect key="frame" x="137" y="417" width="140" height="290"/>
+                                <rect key="frame" x="137" y="455.5" width="140" height="290"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tX-sl-TcJ">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="70"/>
@@ -127,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhR-gt-Tm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-767" y="-498"/>
+            <point key="canvasLocation" x="-768.11594202898561" y="-498.21428571428567"/>
         </scene>
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
