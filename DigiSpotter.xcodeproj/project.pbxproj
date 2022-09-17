@@ -1,0 +1,773 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		050972AECC07BD4BA52496F9 /* Pods_DigiSpotterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4A8E6A9DFF9CC73C3DF2D9 /* Pods_DigiSpotterTests.framework */; };
+		141233AC28D59B1E0090EBCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141233AB28D59B1E0090EBCD /* GoogleService-Info.plist */; };
+		141233AE28D59E590090EBCD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141233AD28D59E590090EBCD /* LoginViewController.swift */; };
+		141233B028D5A8A20090EBCD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141233AF28D5A8A20090EBCD /* SignupViewController.swift */; };
+		1464410C28D58FB400C60DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464410B28D58FB400C60DC8 /* AppDelegate.swift */; };
+		1464411028D58FB400C60DC8 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 1464410F28D58FB400C60DC8 /* Experience.rcproject */; };
+		1464411328D58FB400C60DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1464411128D58FB400C60DC8 /* Main.storyboard */; };
+		1464411528D58FB500C60DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1464411428D58FB500C60DC8 /* Assets.xcassets */; };
+		1464411828D58FB500C60DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1464411628D58FB500C60DC8 /* LaunchScreen.storyboard */; };
+		1464412228D58FB500C60DC8 /* DigiSpotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464412128D58FB500C60DC8 /* DigiSpotterTests.swift */; };
+		1464412C28D58FB500C60DC8 /* DigiSpotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464412B28D58FB500C60DC8 /* DigiSpotterUITests.swift */; };
+		1464412E28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464412D28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift */; };
+		62066BF55087926C1DB7A263 /* Pods_DigiSpotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5EECC7BD04F5B6F8E1A5CB /* Pods_DigiSpotter.framework */; };
+		CA96903EAEED85FAC24A5A78 /* Pods_DigiSpotter_DigiSpotterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB75D64A88761FFB91B128C7 /* Pods_DigiSpotter_DigiSpotterUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1464411E28D58FB500C60DC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1464410028D58FB400C60DC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1464410728D58FB400C60DC8;
+			remoteInfo = DigiSpotter;
+		};
+		1464412828D58FB500C60DC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1464410028D58FB400C60DC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1464410728D58FB400C60DC8;
+			remoteInfo = DigiSpotter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		141233AB28D59B1E0090EBCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		141233AD28D59E590090EBCD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		141233AF28D5A8A20090EBCD /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		1464410828D58FB400C60DC8 /* DigiSpotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiSpotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1464410B28D58FB400C60DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1464410F28D58FB400C60DC8 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		1464411228D58FB400C60DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1464411428D58FB500C60DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1464411728D58FB500C60DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1464411D28D58FB500C60DC8 /* DigiSpotterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiSpotterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1464412128D58FB500C60DC8 /* DigiSpotterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiSpotterTests.swift; sourceTree = "<group>"; };
+		1464412728D58FB500C60DC8 /* DigiSpotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiSpotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1464412B28D58FB500C60DC8 /* DigiSpotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiSpotterUITests.swift; sourceTree = "<group>"; };
+		1464412D28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiSpotterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A4A8E6A9DFF9CC73C3DF2D9 /* Pods_DigiSpotterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiSpotterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A5EECC7BD04F5B6F8E1A5CB /* Pods_DigiSpotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiSpotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ACFFDACABF310E93FC7D560 /* Pods-DigiSpotterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotterTests.release.xcconfig"; path = "Target Support Files/Pods-DigiSpotterTests/Pods-DigiSpotterTests.release.xcconfig"; sourceTree = "<group>"; };
+		3DFFC368D1CC631850204BD3 /* Pods-DigiSpotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotter.release.xcconfig"; path = "Target Support Files/Pods-DigiSpotter/Pods-DigiSpotter.release.xcconfig"; sourceTree = "<group>"; };
+		87DD8CF83B69A7785BE46F48 /* Pods-DigiSpotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotter.debug.xcconfig"; path = "Target Support Files/Pods-DigiSpotter/Pods-DigiSpotter.debug.xcconfig"; sourceTree = "<group>"; };
+		D1AD6099FBA6DD842155027F /* Pods-DigiSpotter-DigiSpotterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotter-DigiSpotterUITests.release.xcconfig"; path = "Target Support Files/Pods-DigiSpotter-DigiSpotterUITests/Pods-DigiSpotter-DigiSpotterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D730EE8FC75D0D45FC59EB44 /* Pods-DigiSpotterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotterTests.debug.xcconfig"; path = "Target Support Files/Pods-DigiSpotterTests/Pods-DigiSpotterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7BB3B77894898815396220D /* Pods-DigiSpotter-DigiSpotterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotter-DigiSpotterUITests.debug.xcconfig"; path = "Target Support Files/Pods-DigiSpotter-DigiSpotterUITests/Pods-DigiSpotter-DigiSpotterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB75D64A88761FFB91B128C7 /* Pods_DigiSpotter_DigiSpotterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiSpotter_DigiSpotterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1464410528D58FB400C60DC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62066BF55087926C1DB7A263 /* Pods_DigiSpotter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1464411A28D58FB500C60DC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				050972AECC07BD4BA52496F9 /* Pods_DigiSpotterTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1464412428D58FB500C60DC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA96903EAEED85FAC24A5A78 /* Pods_DigiSpotter_DigiSpotterUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DC7FDB8B083A9766276DEB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A5EECC7BD04F5B6F8E1A5CB /* Pods_DigiSpotter.framework */,
+				FB75D64A88761FFB91B128C7 /* Pods_DigiSpotter_DigiSpotterUITests.framework */,
+				1A4A8E6A9DFF9CC73C3DF2D9 /* Pods_DigiSpotterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		146440FF28D58FB400C60DC8 = {
+			isa = PBXGroup;
+			children = (
+				1464410A28D58FB400C60DC8 /* DigiSpotter */,
+				1464412028D58FB500C60DC8 /* DigiSpotterTests */,
+				1464412A28D58FB500C60DC8 /* DigiSpotterUITests */,
+				1464410928D58FB400C60DC8 /* Products */,
+				7C6D91210277D630A29D43FB /* Pods */,
+				0DC7FDB8B083A9766276DEB1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1464410928D58FB400C60DC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1464410828D58FB400C60DC8 /* DigiSpotter.app */,
+				1464411D28D58FB500C60DC8 /* DigiSpotterTests.xctest */,
+				1464412728D58FB500C60DC8 /* DigiSpotterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1464410A28D58FB400C60DC8 /* DigiSpotter */ = {
+			isa = PBXGroup;
+			children = (
+				1464410B28D58FB400C60DC8 /* AppDelegate.swift */,
+				1464410F28D58FB400C60DC8 /* Experience.rcproject */,
+				1464411128D58FB400C60DC8 /* Main.storyboard */,
+				141233AF28D5A8A20090EBCD /* SignupViewController.swift */,
+				141233AD28D59E590090EBCD /* LoginViewController.swift */,
+				1464411428D58FB500C60DC8 /* Assets.xcassets */,
+				1464411628D58FB500C60DC8 /* LaunchScreen.storyboard */,
+				141233AB28D59B1E0090EBCD /* GoogleService-Info.plist */,
+			);
+			path = DigiSpotter;
+			sourceTree = "<group>";
+		};
+		1464412028D58FB500C60DC8 /* DigiSpotterTests */ = {
+			isa = PBXGroup;
+			children = (
+				1464412128D58FB500C60DC8 /* DigiSpotterTests.swift */,
+			);
+			path = DigiSpotterTests;
+			sourceTree = "<group>";
+		};
+		1464412A28D58FB500C60DC8 /* DigiSpotterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1464412B28D58FB500C60DC8 /* DigiSpotterUITests.swift */,
+				1464412D28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift */,
+			);
+			path = DigiSpotterUITests;
+			sourceTree = "<group>";
+		};
+		7C6D91210277D630A29D43FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87DD8CF83B69A7785BE46F48 /* Pods-DigiSpotter.debug.xcconfig */,
+				3DFFC368D1CC631850204BD3 /* Pods-DigiSpotter.release.xcconfig */,
+				E7BB3B77894898815396220D /* Pods-DigiSpotter-DigiSpotterUITests.debug.xcconfig */,
+				D1AD6099FBA6DD842155027F /* Pods-DigiSpotter-DigiSpotterUITests.release.xcconfig */,
+				D730EE8FC75D0D45FC59EB44 /* Pods-DigiSpotterTests.debug.xcconfig */,
+				2ACFFDACABF310E93FC7D560 /* Pods-DigiSpotterTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1464410728D58FB400C60DC8 /* DigiSpotter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1464413128D58FB500C60DC8 /* Build configuration list for PBXNativeTarget "DigiSpotter" */;
+			buildPhases = (
+				0172D7919F29080C82E59874 /* [CP] Check Pods Manifest.lock */,
+				1464410428D58FB400C60DC8 /* Sources */,
+				1464410528D58FB400C60DC8 /* Frameworks */,
+				1464410628D58FB400C60DC8 /* Resources */,
+				D04B41278C1C5D1C1356AF75 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DigiSpotter;
+			productName = DigiSpotter;
+			productReference = 1464410828D58FB400C60DC8 /* DigiSpotter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1464411C28D58FB500C60DC8 /* DigiSpotterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1464413428D58FB500C60DC8 /* Build configuration list for PBXNativeTarget "DigiSpotterTests" */;
+			buildPhases = (
+				D163D3E97CE7D7409326AF6C /* [CP] Check Pods Manifest.lock */,
+				1464411928D58FB500C60DC8 /* Sources */,
+				1464411A28D58FB500C60DC8 /* Frameworks */,
+				1464411B28D58FB500C60DC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1464411F28D58FB500C60DC8 /* PBXTargetDependency */,
+			);
+			name = DigiSpotterTests;
+			productName = DigiSpotterTests;
+			productReference = 1464411D28D58FB500C60DC8 /* DigiSpotterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1464412628D58FB500C60DC8 /* DigiSpotterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1464413728D58FB500C60DC8 /* Build configuration list for PBXNativeTarget "DigiSpotterUITests" */;
+			buildPhases = (
+				08BEB0A8D8112CCC52647B21 /* [CP] Check Pods Manifest.lock */,
+				1464412328D58FB500C60DC8 /* Sources */,
+				1464412428D58FB500C60DC8 /* Frameworks */,
+				1464412528D58FB500C60DC8 /* Resources */,
+				A2CB7AE9378A95DFCAE9BEB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1464412928D58FB500C60DC8 /* PBXTargetDependency */,
+			);
+			name = DigiSpotterUITests;
+			productName = DigiSpotterUITests;
+			productReference = 1464412728D58FB500C60DC8 /* DigiSpotterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1464410028D58FB400C60DC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					1464410728D58FB400C60DC8 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					1464411C28D58FB500C60DC8 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 1464410728D58FB400C60DC8;
+					};
+					1464412628D58FB500C60DC8 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 1464410728D58FB400C60DC8;
+					};
+				};
+			};
+			buildConfigurationList = 1464410328D58FB400C60DC8 /* Build configuration list for PBXProject "DigiSpotter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 146440FF28D58FB400C60DC8;
+			productRefGroup = 1464410928D58FB400C60DC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1464410728D58FB400C60DC8 /* DigiSpotter */,
+				1464411C28D58FB500C60DC8 /* DigiSpotterTests */,
+				1464412628D58FB500C60DC8 /* DigiSpotterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1464410628D58FB400C60DC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1464411828D58FB500C60DC8 /* LaunchScreen.storyboard in Resources */,
+				141233AC28D59B1E0090EBCD /* GoogleService-Info.plist in Resources */,
+				1464411528D58FB500C60DC8 /* Assets.xcassets in Resources */,
+				1464411328D58FB400C60DC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1464411B28D58FB500C60DC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1464412528D58FB500C60DC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0172D7919F29080C82E59874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigiSpotter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		08BEB0A8D8112CCC52647B21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigiSpotter-DigiSpotterUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2CB7AE9378A95DFCAE9BEB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiSpotter-DigiSpotterUITests/Pods-DigiSpotter-DigiSpotterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiSpotter-DigiSpotterUITests/Pods-DigiSpotter-DigiSpotterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigiSpotter-DigiSpotterUITests/Pods-DigiSpotter-DigiSpotterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D04B41278C1C5D1C1356AF75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiSpotter/Pods-DigiSpotter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiSpotter/Pods-DigiSpotter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigiSpotter/Pods-DigiSpotter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D163D3E97CE7D7409326AF6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigiSpotterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1464410428D58FB400C60DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				141233AE28D59E590090EBCD /* LoginViewController.swift in Sources */,
+				1464410C28D58FB400C60DC8 /* AppDelegate.swift in Sources */,
+				141233B028D5A8A20090EBCD /* SignupViewController.swift in Sources */,
+				1464411028D58FB400C60DC8 /* Experience.rcproject in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1464411928D58FB500C60DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1464412228D58FB500C60DC8 /* DigiSpotterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1464412328D58FB500C60DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1464412C28D58FB500C60DC8 /* DigiSpotterUITests.swift in Sources */,
+				1464412E28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1464411F28D58FB500C60DC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1464410728D58FB400C60DC8 /* DigiSpotter */;
+			targetProxy = 1464411E28D58FB500C60DC8 /* PBXContainerItemProxy */;
+		};
+		1464412928D58FB500C60DC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1464410728D58FB400C60DC8 /* DigiSpotter */;
+			targetProxy = 1464412828D58FB500C60DC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1464411128D58FB400C60DC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1464411228D58FB400C60DC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1464411628D58FB500C60DC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1464411728D58FB500C60DC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1464412F28D58FB500C60DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1464413028D58FB500C60DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1464413228D58FB500C60DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DD8CF83B69A7785BE46F48 /* Pods-DigiSpotter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYQ52Y5GYG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTN20222.DigiSpotter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1464413328D58FB500C60DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DFFC368D1CC631850204BD3 /* Pods-DigiSpotter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYQ52Y5GYG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTN20222.DigiSpotter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1464413528D58FB500C60DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D730EE8FC75D0D45FC59EB44 /* Pods-DigiSpotterTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYQ52Y5GYG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTN20222.DigiSpotterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiSpotter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiSpotter";
+			};
+			name = Debug;
+		};
+		1464413628D58FB500C60DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACFFDACABF310E93FC7D560 /* Pods-DigiSpotterTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYQ52Y5GYG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTN20222.DigiSpotterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiSpotter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiSpotter";
+			};
+			name = Release;
+		};
+		1464413828D58FB500C60DC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7BB3B77894898815396220D /* Pods-DigiSpotter-DigiSpotterUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYQ52Y5GYG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTN20222.DigiSpotterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DigiSpotter;
+			};
+			name = Debug;
+		};
+		1464413928D58FB500C60DC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AD6099FBA6DD842155027F /* Pods-DigiSpotter-DigiSpotterUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BYQ52Y5GYG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HTN20222.DigiSpotterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DigiSpotter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1464410328D58FB400C60DC8 /* Build configuration list for PBXProject "DigiSpotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1464412F28D58FB500C60DC8 /* Debug */,
+				1464413028D58FB500C60DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1464413128D58FB500C60DC8 /* Build configuration list for PBXNativeTarget "DigiSpotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1464413228D58FB500C60DC8 /* Debug */,
+				1464413328D58FB500C60DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1464413428D58FB500C60DC8 /* Build configuration list for PBXNativeTarget "DigiSpotterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1464413528D58FB500C60DC8 /* Debug */,
+				1464413628D58FB500C60DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1464413728D58FB500C60DC8 /* Build configuration list for PBXNativeTarget "DigiSpotterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1464413828D58FB500C60DC8 /* Debug */,
+				1464413928D58FB500C60DC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1464410028D58FB400C60DC8 /* Project object */;
+}
