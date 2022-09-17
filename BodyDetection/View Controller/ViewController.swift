@@ -12,6 +12,49 @@ import Combine
 import ReplayKit
 import Photos
 
+
+class BodySkeleton: Entity {
+    var joints: [String:Entity] = [:]
+
+    required init(for bodyAnchor: ARBodyAnchor) {
+        super.init()
+        for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
+            let jointRadius: Float = 0.01
+            let jointColour: UIColor = .white
+
+            let jointEntit = makeJoin(radius: jointRadius, color: jointColour)
+            joint[jointName] = jointEntity
+            self.addChild(jointEntity)
+
+        }
+        self.update(with: bodyAnchor)
+    }
+
+    required init() {
+        print("init() has not been implemented")
+    }
+
+    func makeJoint(radius: Float, color: UIColor) -> Entity {
+        let mesh = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
+        let mesh = MeshResource.generateSphere(radius: radius)
+        let entity = ModelEntity(mesh: mesh, materials: [material])
+        return entity
+    }
+
+    func update(with bodyAnchor: ARBodyAnchor) {
+        let rootPosition = simd_make_float3(bodyAnchor.transform.columns.3)
+        for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
+            if let jointEntity = joints[jointName],
+                let jointTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName)) {
+                
+                let jointPosition = simd_make_float3(jointTransform.columns.3)
+                jointEntity.position = rootPosition + jointPosition  
+                jointEntity.orientation = Transform(matrix: jointTransform).rotation
+            } 
+        }
+    }
+}
+
 class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControllerDelegate {
     
     @IBOutlet var recordButton: UIButton!
@@ -61,8 +104,6 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
             stopRecording()
         }
     }
-    
-    // try recording without presenting preview view controller: https://stackoverflow.com/questions/33484101/how-to-save-replaykit-video-to-camera-roll-with-in-app-button?rq=1
 
     func startRecording() {
         // https://www.appcoda.com/replaykit/
@@ -203,12 +244,16 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
         printoutText = ""
     }
     
+    /**
+        *  MARK: - 3D Character Rebuild.
+        */
+
     // The 3D character to display.
-    var character: BodyTrackedEntity?
-    let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
-    let characterAnchor = AnchorEntity()
+    var bodySkeleton: BodySkeleton?
+    let bodySkeletonAnchor = AnchorEntity()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         recordButton.layer.masksToBounds = true
         recordButton.setTitleColor(.white, for: .normal)
         recordButton.backgroundColor = .red
@@ -217,122 +262,112 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
         
         recordButtonView.layer.masksToBounds = true
         recordButtonView.layer.cornerRadius = recordButtonView.layer.frame.height / 2
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        arView.session.delegate = self
-        
-        // If the iOS device doesn't support body tracking, raise a developer error for
-        // this unhandled case.
-        guard ARBodyTrackingConfiguration.isSupported else {
-            fatalError("This feature is only supported on devices with an A12 chip")
-        }
-        
-        // Run a body tracking configration.
-        let configuration = ARBodyTrackingConfiguration()
-        arView.session.run(configuration)
-        
-        arView.scene.addAnchor(characterAnchor)
-        
-        // Asynchronously load the 3D character.
-        var cancellable: AnyCancellable? = nil
-        cancellable = Entity.loadBodyTrackedAsync(named: "character/robot").sink(
-            receiveCompletion: { completion in
-                if case let .failure(error) = completion {
-                    print("Error: Unable to load model: \(error.localizedDescription)")
-                }
-                cancellable?.cancel()
-        }, receiveValue: { (character: Entity) in
-            if let character = character as? BodyTrackedEntity {
-                // Scale the character to human size
-                character.scale = [1.0, 1.0, 1.0]
-                self.character = character
-                cancellable?.cancel()
-            } else {
-                print("Error: Unable to load model as BodyTrackedEntity")
-            }
-        })
-    }
-    
-    func writeLowerBodyAnchors(anchor: ARBodyAnchor) {
-        // adding to a string
-        // goal is to save the knee transform(s) to start
-        let rightFootTransform = anchor.skeleton.localTransform(for: .rightFoot)
-        let leftFootTransform = anchor.skeleton.localTransform(for: .leftFoot)
 
-        printoutText += "\n local transform for right foot: \(rightFootTransform!)"
-        printoutText += "\n local transform for left foot: \(leftFootTransform!)"
-        printoutText += "\n local transform for root: \(anchor.skeleton.localTransform(for: .root)!)"
-        
-        // goal is to annotate the left and right feet with custom views... very taxing
-        
-        /*
-        let leftFootAnchor = AnchorEntity()
-        arView.scene.addAnchor(leftFootAnchor)
-        let sphere = MeshResource.generateSphere(radius: 0.5)
-        let entity = ModelEntity(mesh: sphere)
-        if let matrix = rightFootTransform {
-            let transform = Transform(matrix: matrix)
-            entity.transform = transform
-            leftFootAnchor.addChild(entity)
-            print("added right foot entity")
+        // Do a check to see if the device supports ARKit.
+        guard ARBodyTrackingConfiguration.isSupported else {
+            fatalError("ARKit is not supported on this device.")
         }
-         */
+
+        let configuration =    ARBodyTrackingConfiguration()
+        arView.session.run(configuration)   
+        arView.scene.addAnchor(bodySkeletonAnchor)
+        arView.session.delegate = self
+        configuration.isAutoFocusEnabled = true
     }
+
+    // override func viewDidAppear(_ animated: Bool) {
+    //     super.viewDidAppear(animated)
+    //     arView.session.delegate = self
+        
+    //     // If the iOS device doesn't support body tracking, raise a developer error for
+    //     // this unhandled case.
+    //     guard ARBodyTrackingConfiguration.isSupported else {
+    //         fatalError("This feature is only supported on devices with an A12 chip")
+    //     }
+        
+    //     // Run a body tracking configration.
+    //     let configuration = ARBodyTrackingConfiguration()
+    //     arView.session.run(configuration)
+        
+    //     arView.scene.addAnchor(characterAnchor)
+        
+    //     // Asynchronously load the 3D character.
+    //     var cancellable: AnyCancellable? = nil
+    //     cancellable = Entity.loadBodyTrackedAsync(named: "character/robot").sink(
+    //         receiveCompletion: { completion in
+    //             if case let .failure(error) = completion {
+    //                 print("Error: Unable to load model: \(error.localizedDescription)")
+    //             }
+    //             cancellable?.cancel()
+    //     }, receiveValue: { (character: Entity) in
+    //         if let character = character as? BodyTrackedEntity {
+    //             // Scale the character to human size
+    //             character.scale = [1.0, 1.0, 1.0]
+    //             self.character = character
+    //             cancellable?.cancel()
+    //         } else {
+    //             print("Error: Unable to load model as BodyTrackedEntity")
+    //         }
+    //     })
+    // }
     
-    func writeAllAnchors(anchor: ARBodyAnchor) {
-        // using force unwrapping...
-        let joints = [ARSkeleton.JointName.head, ARSkeleton.JointName.leftShoulder, ARSkeleton.JointName.rightShoulder, ARSkeleton.JointName.leftHand, ARSkeleton.JointName.rightHand, ARSkeleton.JointName.root, ARSkeleton.JointName.leftFoot, ARSkeleton.JointName.rightFoot]
-        for joint in joints {
-            printoutText += "\n local transform for \(joint): \(anchor.skeleton.localTransform(for: joint)!)"
-            printoutText += "\n model transform for \(joint): \(anchor.skeleton.modelTransform(for: joint)!)"
-        }
-    }
+    // func writeLowerBodyAnchors(anchor: ARBodyAnchor) {
+    //     // adding to a string
+    //     // goal is to save the knee transform(s) to start
+    //     let rightFootTransform = anchor.skeleton.localTransform(for: .rightFoot)
+    //     let leftFootTransform = anchor.skeleton.localTransform(for: .leftFoot)
+
+    //     printoutText += "\n local transform for right foot: \(rightFootTransform!)"
+    //     printoutText += "\n local transform for left foot: \(leftFootTransform!)"
+    //     printoutText += "\n local transform for root: \(anchor.skeleton.localTransform(for: .root)!)"
+        
+    //     // goal is to annotate the left and right feet with custom views... very taxing
+        
+    //     /*
+    //     let leftFootAnchor = AnchorEntity()
+    //     arView.scene.addAnchor(leftFootAnchor)
+    //     let sphere = MeshResource.generateSphere(radius: 0.5)
+    //     let entity = ModelEntity(mesh: sphere)
+    //     if let matrix = rightFootTransform {
+    //         let transform = Transform(matrix: matrix)
+    //         entity.transform = transform
+    //         leftFootAnchor.addChild(entity)
+    //         print("added right foot entity")
+    //     }
+    //      */
+    // }
+    
+    // func writeAllAnchors(anchor: ARBodyAnchor) {
+    //     // using force unwrapping...
+    //     let joints = [ARSkeleton.JointName.head, ARSkeleton.JointName.leftShoulder, ARSkeleton.JointName.rightShoulder, ARSkeleton.JointName.leftHand, ARSkeleton.JointName.rightHand, ARSkeleton.JointName.root, ARSkeleton.JointName.leftFoot, ARSkeleton.JointName.rightFoot]
+    //     for joint in joints {
+    //         printoutText += "\n local transform for \(joint): \(anchor.skeleton.localTransform(for: joint)!)"
+    //         printoutText += "\n model transform for \(joint): \(anchor.skeleton.modelTransform(for: joint)!)"
+    //     }
+    // }
 
     // primary function called to update character
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
-                       guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-            //
-            //            // Write data to text view — performance nightmare probably
-                      writeLowerBodyAnchors(anchor: bodyAnchor)
-            //
-                // Update the position of the character anchor's position.
-                let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-                characterAnchor.position = bodyPosition + characterOffset
-                // Also copy over the rotation of the body anchor, because the skeleton's pose
-                // in the world is relative to the body anchor's rotation.
-                characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
-    
-                if let character = character, character.parent == nil {
-                    // Attach the character to its anchor as soon as
-                    // 1. the body anchor was detected and
-                    // 2. the character was loaded.
-                    characterAnchor.addChild(character)
-                }
-            if let bodyAnchor = anchor as? ARBodyAnchor {
-                print("Updating body anchor")
-                
-                let skeleton = bodyAnchor.skeleton
-                
-                let rootJointTransform = skeleton.modelTransform(for: .root)!
-                let rootJointPosition = simd_make_float3(rootJointTransform.columns.3)
-                print("root: \(rootJointPosition)")
-                
-                // Update the position of the character anchor's position.
-                let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-                characterAnchor.position = bodyPosition + characterOffset
-                // Also copy over the rotation of the body anchor, because the skeleton's pose
-                // in the world is relative to the body anchor's rotation.
-                characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
-                
-                if let character = character, character.parent == nil {
-                    // Attach the character to its anchor as soon as
-                    // 1. the body anchor was detected and
-                    // 2. the character was loaded.
-                    characterAnchor.addChild(character)
-                    
-                }
+
+            guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
+            let skeleton =  bodyAnchor.skeleton
+            
+            let rootJointTransform = skeleton.modelTransform(for: .root)
+            let rootJointPosition = simd_make_float3((rootJointTransform?.columns.3)!)
+            print("righthand position is \(rootJointPosition)")
+
+            let leftHandTransform = skeleton.modelTransform(for: .leftHand)
+            let leftHandOffset = simd_make_float3((leftHandTransform?.columns.3)!)
+            let leftHandPosition = simd_make_float3((rightHandJointTransform?.columns.3)!)
+            print("lefthand position is \(leftHandPosition)")
+
+            if let skeleton = bodySkeleton {
+                skeleton.update(with: bodyAnchor)
+            } else {
+                let skeleton = BodySkeleton(for: bodyAnchor)
+                bodySkeleton = skeleton
+                bodySkeletonAnchor.addChild(skeleton)
             }
         }
     }
@@ -349,3 +384,4 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
         }
     }
 }
+
