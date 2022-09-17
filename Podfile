@@ -15,6 +15,9 @@ target 'DigiSpotter' do
   target 'DigiSpotterUITests' do
     # Pods for testing
   end
+
+  project 'DigiSpotter.xcodeproj'
+
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
