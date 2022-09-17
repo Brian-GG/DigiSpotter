@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     var selectedExercise: String = "Squats"
     var arraySize: Int = 0
     
-    @IBOutlet var timeField: UITextField!
+    @IBOutlet var restTimeField: UITextField!
     @IBOutlet var setsField: UITextField!
     @IBOutlet var repsField: UITextField!
     
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
                 
         database.child(userUID!).observeSingleEvent(of: .value, with: { snapshot in
             // Get user value
-            if let dictionary  = snapshot.value as? [String: Any]{
+            if let dictionary = snapshot.value as? [String: Any]{
                 self.arraySize = dictionary[""] as! Int
             }
           }) { error in
@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     
     @IBAction func uploadBtnPressed(_ sender: Any) {
         
-        if timeField.text?.isEmpty == true{
+        if restTimeField.text?.isEmpty == true{
             print("No time set")
             return
         }
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
             "end-time": 0,
             "sets": setsField.text!,
             "reps": repsField.text!,
-            "rest-time": timeField.text!,
+            "rest-time": restTimeField.text!,
         ]
         
         arraySize += 1
@@ -97,4 +97,13 @@ class MainViewController: UIViewController {
             
         database.child("users").child(userUID!).child(selectedExercise).child(String(arraySize)).updateChildValues(info)
     }
+    
+    
+//    @IBAction func historyPageBtn(_ sender: Any) {
+//        // Changes storyboard to login page
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "history")
+//        vc?.modalPresentationStyle = .overFullScreen
+//        self.present(vc!, animated: true)
+//    }
 }

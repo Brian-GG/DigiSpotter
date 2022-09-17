@@ -32,7 +32,7 @@ class SignupViewController: UIViewController {
     }
     
     // Action for when signup btn pressed
-    @IBAction func signupBtnTapped(_ sender: Any) {
+    @IBAction func signupBtnPressed(_ sender: Any) {
         // Checks to see if user input fields are empty
         if emailField.text?.isEmpty == true{
             print("No text in email field")

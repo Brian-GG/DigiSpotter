@@ -49,7 +49,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
-                                    <action selector="loginBtnPressed:" destination="t4k-97-Reh" eventType="touchUpInside" id="9ud-Q2-ob3"/>
+                                    <action selector="loginBtnPressed:" destination="t4k-97-Reh" eventType="touchUpInside" id="PO7-kg-lsh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgJ-zJ-ihO">
@@ -58,7 +58,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Dont have an account? Signup"/>
                                 <connections>
-                                    <action selector="createAccountPressed:" destination="t4k-97-Reh" eventType="touchUpInside" id="WsZ-84-4Q3"/>
+                                    <action selector="createAccountPressed:" destination="t4k-97-Reh" eventType="touchUpInside" id="MJW-2X-8oc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,8 +66,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="wbG-kn-mjG" id="f5F-cA-Hyg"/>
-                        <outlet property="passwordField" destination="7go-0F-mE9" id="FqZ-VA-OMx"/>
+                        <outlet property="emailField" destination="wbG-kn-mjG" id="uHV-cn-IHv"/>
+                        <outlet property="passwordField" destination="7go-0F-mE9" id="Ap6-HJ-MZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rn1-Ey-O7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -144,9 +144,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="repsField" destination="0UU-pQ-HWU" id="Lt9-4T-7Xe"/>
-                        <outlet property="setsField" destination="lyJ-qS-t69" id="N3A-6d-Fs4"/>
-                        <outlet property="timeField" destination="3x6-Xp-dde" id="fOc-v4-5K3"/>
+                        <outlet property="repsField" destination="0UU-pQ-HWU" id="ACK-8c-N72"/>
+                        <outlet property="restTimeField" destination="3x6-Xp-dde" id="6EC-l9-s8n"/>
+                        <outlet property="setsField" destination="lyJ-qS-t69" id="guO-dM-4Um"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41i-OZ-4Mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -193,7 +193,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="signup"/>
                                 <connections>
-                                    <action selector="signupBtnTapped:" destination="sTh-4Y-hus" eventType="touchUpInside" id="vbj-Nd-ztx"/>
+                                    <action selector="signupBtnPressed:" destination="sTh-4Y-hus" eventType="touchUpInside" id="s0R-7r-7Qc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9x-2Z-lRv">
@@ -202,7 +202,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Already have an account? Login"/>
                                 <connections>
-                                    <action selector="haveAccountPressed:" destination="sTh-4Y-hus" eventType="touchUpInside" id="a0h-zi-rvX"/>
+                                    <action selector="haveAccountPressed:" destination="sTh-4Y-hus" eventType="touchUpInside" id="jWu-cR-bXm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -210,8 +210,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="jKQ-6g-smG" id="j65-vq-8UZ"/>
-                        <outlet property="passwordField" destination="FDZ-F3-Yz9" id="hJc-2v-vy9"/>
+                        <outlet property="emailField" destination="jKQ-6g-smG" id="g7T-ub-asm"/>
+                        <outlet property="passwordField" destination="FDZ-F3-Yz9" id="vPD-Rn-x5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuC-pp-wsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

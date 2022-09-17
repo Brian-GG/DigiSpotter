@@ -54,12 +54,12 @@ class LoginViewController: UIViewController {
     
     // Passes email and password imput fields into firebase auth
     func login(){
-        Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { [weak self] authResult, error in
-            guard let strongSelf = self else {return}
+        Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { [weak self] authResult, error in guard let strongSelf = self else {return}
             
             if let error = error{
                 print(error.localizedDescription)
             }
+            
             self!.checkUserInfo()
         }
     }
