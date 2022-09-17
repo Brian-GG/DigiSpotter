@@ -65,7 +65,7 @@ class SignupViewController: UIViewController {
     }
 }
 
-// Put this piece of code anywhere you like
+// When click off keyboard, keyboard disappears
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))

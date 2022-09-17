@@ -6,28 +6,40 @@
 //
 
 import UIKit
+import Foundation
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 
 class MainViewController: UIViewController {
-
+    
+    let userUID = Auth.auth().currentUser?.uid
+    
+    private let database = Database.database().reference()
+    
+    var currentDateTime: String = ""
+    var selectedExercise: String = "Squats"
+    var arraySize: Int = 0
+    
     @IBOutlet var timeField: UITextField!
     @IBOutlet var setsField: UITextField!
     @IBOutlet var repsField: UITextField!
     
-    var timeVar: String = ""
-    var setsVar: String = ""
-    var repsVar: String = ""
-    
-    private let database = Database.database().reference()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        database.child(userUID!).observeSingleEvent(of: .value, with: { snapshot in
+            // Get user value
+            if let dictionary  = snapshot.value as? [String: Any]{
+                self.arraySize = dictionary[""] as! Int
+            }
+          }) { error in
+            print(error.localizedDescription)
+          }
         
         // Calls hide keyboard func
         self.hideKeyboardWhenTappedAround()
     }
-    
     
     @IBAction func uploadBtnPressed(_ sender: Any) {
         
@@ -50,11 +62,39 @@ class MainViewController: UIViewController {
     }
                   
     @objc private func addNewEntry(){
-        timeVar = timeField.text!
-        setsVar = setsField.text!
-        repsVar = repsField.text!
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        currentDateTime = dateFormatter.string(from: date)
         
-        database.child("something").setValue(timeVar)
+        let info: [String: Any] = [
+            "start-time": currentDateTime,
+            "end-time": 0,
+            "sets": setsField.text!,
+            "reps": repsField.text!,
+            "rest-time": timeField.text!,
+        ]
+        
+        arraySize += 1
+            
+        database.child("users").child(userUID!).child(selectedExercise).child(String(arraySize)).setValue(info)
+        
     }
     
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        addEndDateTime()
+    }
+    
+    @objc private func addEndDateTime(){
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        currentDateTime = dateFormatter.string(from: date)
+        
+        let info: [String: Any] = [
+            "end-time": currentDateTime,
+        ]
+            
+        database.child("users").child(userUID!).child(selectedExercise).child(String(arraySize)).updateChildValues(info)
+    }
 }

@@ -122,12 +122,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-Kh-rgX">
-                                <rect key="frame" x="168" y="729" width="79" height="35"/>
+                                <rect key="frame" x="177" y="729" width="62" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Upload"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start"/>
                                 <connections>
                                     <action selector="uploadBtnPressed:" destination="EeH-lo-63J" eventType="touchUpInside" id="5Wx-ja-8E3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSs-9l-hSc">
+                                <rect key="frame" x="290" y="729" width="53" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="end"/>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="EeH-lo-63J" eventType="touchUpInside" id="t1j-e5-PjP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,9 +144,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="breakTimeField" destination="3x6-Xp-dde" id="cYu-N6-nAe"/>
-                        <outlet property="repsFields" destination="0UU-pQ-HWU" id="G24-8Y-nZr"/>
-                        <outlet property="setsField" destination="lyJ-qS-t69" id="YeI-59-0OJ"/>
+                        <outlet property="repsField" destination="0UU-pQ-HWU" id="Lt9-4T-7Xe"/>
+                        <outlet property="setsField" destination="lyJ-qS-t69" id="N3A-6d-Fs4"/>
+                        <outlet property="timeField" destination="3x6-Xp-dde" id="fOc-v4-5K3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41i-OZ-4Mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
