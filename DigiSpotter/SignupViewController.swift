@@ -17,6 +17,8 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Calls hide keyboard func
         self.hideKeyboardWhenTappedAround()
     }
 

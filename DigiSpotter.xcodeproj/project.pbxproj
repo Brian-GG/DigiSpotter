@@ -19,6 +19,7 @@
 		1464412228D58FB500C60DC8 /* DigiSpotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464412128D58FB500C60DC8 /* DigiSpotterTests.swift */; };
 		1464412C28D58FB500C60DC8 /* DigiSpotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464412B28D58FB500C60DC8 /* DigiSpotterUITests.swift */; };
 		1464412E28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464412D28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift */; };
+		147E81DF28D5D0A6004BC078 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147E81DE28D5D0A6004BC078 /* MainViewController.swift */; };
 		62066BF55087926C1DB7A263 /* Pods_DigiSpotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5EECC7BD04F5B6F8E1A5CB /* Pods_DigiSpotter.framework */; };
 		CA96903EAEED85FAC24A5A78 /* Pods_DigiSpotter_DigiSpotterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB75D64A88761FFB91B128C7 /* Pods_DigiSpotter_DigiSpotterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		1464412728D58FB500C60DC8 /* DigiSpotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiSpotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1464412B28D58FB500C60DC8 /* DigiSpotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiSpotterUITests.swift; sourceTree = "<group>"; };
 		1464412D28D58FB500C60DC8 /* DigiSpotterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiSpotterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		147E81DE28D5D0A6004BC078 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1A4A8E6A9DFF9CC73C3DF2D9 /* Pods_DigiSpotterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiSpotterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5EECC7BD04F5B6F8E1A5CB /* Pods_DigiSpotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiSpotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACFFDACABF310E93FC7D560 /* Pods-DigiSpotterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiSpotterTests.release.xcconfig"; path = "Target Support Files/Pods-DigiSpotterTests/Pods-DigiSpotterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				1464410B28D58FB400C60DC8 /* AppDelegate.swift */,
 				1464410F28D58FB400C60DC8 /* Experience.rcproject */,
 				1464411128D58FB400C60DC8 /* Main.storyboard */,
+				147E81DE28D5D0A6004BC078 /* MainViewController.swift */,
 				141233AF28D5A8A20090EBCD /* SignupViewController.swift */,
 				141233AD28D59E590090EBCD /* LoginViewController.swift */,
 				1464411428D58FB500C60DC8 /* Assets.xcassets */,
@@ -415,6 +418,7 @@
 				1464410C28D58FB400C60DC8 /* AppDelegate.swift in Sources */,
 				141233B028D5A8A20090EBCD /* SignupViewController.swift in Sources */,
 				1464411028D58FB400C60DC8 /* Experience.rcproject in Sources */,
+				147E81DF28D5D0A6004BC078 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
