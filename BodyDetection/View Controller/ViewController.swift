@@ -323,7 +323,7 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
                 
                 let skeleton = bodyAnchor.skeleton
                 
-                let rootJointTransform = skeleton.modelTransform(for: .root)
+                let rootJointTransform = skeleton.modelTransform(for: .root)!
                 let rootJointPosition = simd_make_float3(rootJointTransform.columns.3)
                 print("root: \(rootJointPosition)")
                 

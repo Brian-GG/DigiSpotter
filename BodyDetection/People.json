@@ -1,22 +1,28 @@
 {
     "People": [
         {
-            "Name": "Nikhil Yerasi",
-            "Affiliation": "Undergraduate, Data Science",
+            "Name": "Keane Moraes",
+            "Affiliation": "Undergraduate, Computer Science",
             "Position": "iOS Developer",
             
         },
         {
-            "Name": "Caroline Liu",
-            "Affiliation": "Undergraduate, EECS",
+            "Name": "Nicholas Abraham Pardede",
+            "Affiliation": "Graduate", "Conestoga",
             "Position": "Mobile Developer",
             
         },
         {
-            "Name": "Mathias Vissers",
-            "Affiliation": "Masters, Translational Medicine",
+            "Name": "Kareem Ghadban",
+            "Affiliation": "Undergraduate", "Western University"
             "Position": "Project Lead",
             
         }
+        {
+            "Name": "Brian G",
+            "Affiliation": "Undergraduate", "Queens University",
+            "Position": "Project Lead",
+            
+        },
     ]
 }
