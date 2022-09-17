@@ -20,6 +20,9 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
     @IBOutlet var timerView: UIView!
     @IBOutlet var timerLabel: UILabel!
     
+    // The joint transforms for the motion.
+    var jointTransforms = [ARBodyAnchor.jointTransform]()
+
     // write transform data to json
     var printoutText: String = ""
     
@@ -283,6 +286,14 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
         for joint in joints {
             printoutText += "\n local transform for \(joint): \(anchor.skeleton.localTransform(for: joint)!)"
             printoutText += "\n model transform for \(joint): \(anchor.skeleton.modelTransform(for: joint)!)"
+        }
+
+        // store them in an array
+        for joint in joints {
+            let localTransform = anchor.skeleton.localTransform(for: joint)
+            let modelTransform = anchor.skeleton.modelTransform(for: joint)
+            let jointTransform = JointTransform(localTransform: localTransform!, modelTransform: modelTransform!)
+            jointTransforms.append(jointTransform)
         }
     }
 
