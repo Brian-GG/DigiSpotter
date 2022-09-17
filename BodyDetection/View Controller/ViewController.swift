@@ -21,7 +21,7 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
     @IBOutlet var timerLabel: UILabel!
     
     // The joint transforms for the motion.
-    var jointTransforms = [ARBodyAnchor.jointTransform]()
+    //var jointTransforms = [ARBodyAnchor.jointTransform]()
 
     // write transform data to json
     var printoutText: String = ""
@@ -289,34 +289,58 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
         }
 
         // store them in an array
-        for joint in joints {
-            let localTransform = anchor.skeleton.localTransform(for: joint)
-            let modelTransform = anchor.skeleton.modelTransform(for: joint)
-            let jointTransform = JointTransform(localTransform: localTransform!, modelTransform: modelTransform!)
-            jointTransforms.append(jointTransform)
-        }
+//        for joint in joints {
+//            let localTransform = anchor.skeleton.localTransform(for: joint)
+//            let modelTransform = anchor.skeleton.modelTransform(for: joint)
+//            let jointTransform = JointTransform(localTransform: localTransform!, modelTransform: modelTransform!)
+//            jointTransforms.append(jointTransform)
+//        }
     }
 
     // primary function called to update character
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
-            guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-            
-            // Write data to text view — performance nightmare probably
-            writeLowerBodyAnchors(anchor: bodyAnchor)
-            
-            // Update the position of the character anchor's position.
-            let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-            characterAnchor.position = bodyPosition + characterOffset
-            // Also copy over the rotation of the body anchor, because the skeleton's pose
-            // in the world is relative to the body anchor's rotation.
-            characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
-            
-            if let character = character, character.parent == nil {
-                // Attach the character to its anchor as soon as
-                // 1. the body anchor was detected and
-                // 2. the character was loaded.
-                characterAnchor.addChild(character)
+                       guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
+            //
+            //            // Write data to text view — performance nightmare probably
+                      writeLowerBodyAnchors(anchor: bodyAnchor)
+            //
+            //            // Update the position of the character anchor's position.
+            //            let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
+            //            characterAnchor.position = bodyPosition + characterOffset
+            //            // Also copy over the rotation of the body anchor, because the skeleton's pose
+            //            // in the world is relative to the body anchor's rotation.
+            //            characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
+            //
+            //            if let character = character, character.parent == nil {
+            //                // Attach the character to its anchor as soon as
+            //                // 1. the body anchor was detected and
+            //                // 2. the character was loaded.
+            //                characterAnchor.addChild(character)
+            //            }
+            if let bodyAnchor = anchor as? ARBodyAnchor {
+                print("Updating body anchor")
+                
+                let skeleton = bodyAnchor.skeleton
+                
+                let rootJointTransform = skeleton.modelTransform(for: .root)
+                let rootJointPosition = simd_make_float3(rootJointTransform.columns.3)
+                print("root: \(rootJointPosition)")
+                
+                // Update the position of the character anchor's position.
+                let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
+                characterAnchor.position = bodyPosition + characterOffset
+                // Also copy over the rotation of the body anchor, because the skeleton's pose
+                // in the world is relative to the body anchor's rotation.
+                characterAnchor.orientation = Transform(matrix: bodyAnchor.transform).rotation
+                
+                if let character = character, character.parent == nil {
+                    // Attach the character to its anchor as soon as
+                    // 1. the body anchor was detected and
+                    // 2. the character was loaded.
+                    characterAnchor.addChild(character)
+                    
+                }
             }
         }
     }
