@@ -49,8 +49,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
-                                    <action selector="loginBtnPressed:" destination="t4k-97-Reh" eventType="touchUpInside" id="EPi-Qj-bs3"/>
-                                    <action selector="loginBtnTapped:" destination="t4k-97-Reh" eventType="touchUpInside" id="FS6-by-01z"/>
+                                    <action selector="loginBtnPressed:" destination="t4k-97-Reh" eventType="touchUpInside" id="9ud-Q2-ob3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgJ-zJ-ihO">
