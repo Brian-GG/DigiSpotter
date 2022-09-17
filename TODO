@@ -1,0 +1,19 @@
+# TODO
+
+* We need to use [ARBodyAnchor](https://developer.apple.com/documentation/arkit/arbodyanchor) to have the skeleton of the single person
+
+```swift
+static var hipToFootOffset: Float {
+    // Get an index for a foot. 
+    let footIndex = ARSkeletonDefinition.defaultBody3D.index(forJointName: .leftFoot)
+    // Get the foot's world-space offset from the hip. 
+    let footTransform = ARSkeletonDefinition.defaultBody3D.neutralBodySkeleton3D!.jointModelTransforms[footIndex]
+    // Return the height by getting just the y-value. 
+    let distanceFromHipOnY = abs(footTransform.columns.3.y) 
+    return distanceFromHipOnY
+}
+```
+
+* Implement record functionality to track, save, and playback a specific motion
+
+* Add UI to display analytics for recorded motion
