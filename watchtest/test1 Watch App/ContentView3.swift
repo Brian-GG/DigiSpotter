@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct ContentView3: View {
+    @State var timeRemaining = 10
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        Text("125").font(.system(.title, design: .rounded)).foregroundColor(.orange)
+        
+        Text("\(timeRemaining)").font(.system(.title, design: .rounded)).foregroundColor(.orange)
+            .onReceive(timer) { _ in
+                while timeRemaining > 0 {
+                    timeRemaining -= 1
+                    if timeRemaining == 0 {
+                            timeRemaining = 10
+                    }
+                        
+                }
+            }
+//        Text("125").font(.system(.title, design: .rounded)).foregroundColor(.orange)
     }
 }
 
