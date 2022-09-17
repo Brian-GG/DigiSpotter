@@ -107,7 +107,6 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
     }
 
     func startRecording() {
-        // https://www.appcoda.com/replaykit/
         guard recorder.isAvailable else {
             print("Recording is not available at this time.")
             return
