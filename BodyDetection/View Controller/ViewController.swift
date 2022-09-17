@@ -19,11 +19,11 @@ class BodySkeleton: Entity {
     required init(for bodyAnchor: ARBodyAnchor) {
         super.init()
         for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
-            let jointRadius: Float = 0.01
-            let jointColour: UIColor = .white
+            let jointRadius: Float = 0.015
+            let jointColour: UIColor = .green
 
-            let jointEntit = makeJoin(radius: jointRadius, color: jointColour)
-            joint[jointName] = jointEntity
+            let jointEntity = makeJoint(radius: jointRadius, color: jointColour)
+            joints[jointName] = jointEntity
             self.addChild(jointEntity)
 
         }
@@ -35,8 +35,9 @@ class BodySkeleton: Entity {
     }
 
     func makeJoint(radius: Float, color: UIColor) -> Entity {
-        let mesh = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
+        
         let mesh = MeshResource.generateSphere(radius: radius)
+        let material = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
         let entity = ModelEntity(mesh: mesh, materials: [material])
         return entity
     }
@@ -359,7 +360,7 @@ class ViewController: UIViewController, ARSessionDelegate, RPPreviewViewControll
 
             let leftHandTransform = skeleton.modelTransform(for: .leftHand)
             let leftHandOffset = simd_make_float3((leftHandTransform?.columns.3)!)
-            let leftHandPosition = simd_make_float3((rightHandJointTransform?.columns.3)!)
+            let leftHandPosition = simd_make_float3((leftHandTransform?.columns.3)!)
             print("lefthand position is \(leftHandPosition)")
 
             if let skeleton = bodySkeleton {
