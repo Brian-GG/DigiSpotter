@@ -18,9 +18,9 @@ struct Person {
 class Data {
     // update var as needed!
     public var people = [
-        Person(name: "Nikhil Yerasi", affiliation: "B.A. Data Science", profileImage: UIImage(named: "nik")),
-        Person(name: "Caroline Liu", affiliation: "B.S. EECS", profileImage: UIImage(named: "caroline")),
-        Person(name: "Mathias Vissers", affiliation: "Master's Translational Medicine", profileImage: UIImage(named: "mathias")),
-        Person(name: "Wei-Kai Lin", affiliation: "Master's Translational Medicine", profileImage: UIImage(named: "wei-kai"))
+        Person(name: "Brian Grigore", affiliation: "Undergraduate, Queens University", profileImage: UIImage(named: "bgrigore")),
+        Person(name: "Keane Moraes", affiliation: "Undergraduate, University of Waterloo", profileImage: UIImage(named: "k3moraes")),
+        Person(name: "Nicholas Pardede", affiliation: "Graduate, Conestoga College", profileImage: UIImage(named: "npardede")),
+        Person(name: "Kareem Ghadban", affiliation: "Undergradaute, Western University", profileImage: UIImage(named: "kghadban"))
     ]
 }

@@ -35,7 +35,7 @@
 		2F60E1EB22631E0F00357E98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DCA879A14A3351D9E9CEA98 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		718E55BB2289F8FF00A9B13B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		78F4E054153DD3A4202C28BA /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		78F4E054153DD3A4202C28BA /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE.txt; path = LICENSE/LICENSE.txt; sourceTree = "<group>"; };
 		B01FF738239769C000927182 /* People.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = People.json; sourceTree = "<group>"; };
 		B02E902323974DB80003D5ED /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		B02E902523974E870003D5ED /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -68,11 +68,11 @@
 		2F60E1B122631DCF00357E98 = {
 			isa = PBXGroup;
 			children = (
+				78F4E054153DD3A4202C28BA /* LICENSE.txt */,
 				718E55BB2289F8FF00A9B13B /* README.md */,
 				2F60E1D922631E0F00357E98 /* BodyDetection */,
 				2F60E1BB22631DCF00357E98 /* Products */,
 				29819F71B3026A375E893049 /* Configuration */,
-				5CAEF4054B950A25D1A4FF99 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +101,6 @@
 				B04FF974242C549A00880419 /* JointAnnotationEntity.swift */,
 			);
 			path = BodyDetection;
-			sourceTree = "<group>";
-		};
-		5CAEF4054B950A25D1A4FF99 /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				78F4E054153DD3A4202C28BA /* LICENSE.txt */,
-			);
-			path = LICENSE;
 			sourceTree = "<group>";
 		};
 		B02E902223974D8C0003D5ED /* View Controller */ = {
@@ -292,6 +284,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.6;
 			};
 			name = Debug;
 		};
@@ -350,6 +343,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.6;
 			};
 			name = Release;
 		};

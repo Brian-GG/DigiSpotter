@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ModalViewControllerDelegate: class {
+protocol ModalViewControllerDelegate: AnyObject {
     func removeBlurredBackgroundView()
 }
 
