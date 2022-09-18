@@ -124,7 +124,16 @@ class BodySkeleton: Entity{
                 
                 let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
                 let angleDegShived:Float = (angle * 180 / .pi) - 45
-//                print("The angle of the bone is:\(angleDegShived)");
+                //print("The angle of the bone is:\(angleDegShived)");
+                
+                if angleDegShived < 10 {
+                    print("You have EXCELLENT FORM")
+                } else if angleDegShived < 15 && currentPos - lowestPos <= 0.2{
+                    print("You have ACCEPTABLE FORM. Try going down more")
+                } else if currentPos - lowestPos <= 0.2{
+                    print("You have BAD form. You must go down further.")
+                }
+                
             }
             
             // Right upper leg bone
@@ -134,6 +143,14 @@ class BodySkeleton: Entity{
                 let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
                 let angleDegShived:Float = (angle * 180 / .pi) - 45
 //                print("The angle of the bone is:\(angleDegShived)");
+                
+                if angleDegShived < 10 {
+                    print("You have EXCELLENT FORM")
+                } else if angleDegShived < 15 && currentPos - lowestPos <= 0.2{
+                    print("You have ACCEPTABLE FORM. Try going down more")
+                } else if currentPos - lowestPos <= 0.2{
+                    print("You have BAD form. You must go down further.")
+                }
             }
 
             // Spine bone(s)
@@ -142,8 +159,10 @@ class BodySkeleton: Entity{
                     let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
                     let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
                     let angleDegShived:Float = (angle * 180 / .pi)
-                if abs(angleDegShived) > 3.5 {
-//                    print("Your back is too bent")
+                if abs(angleDegShived) > 3.5 && currentPos - lowestPos <= 0.2 {
+                    print("Your have BAD form. Your back is too bent")
+                } else {
+                    print("You have EXCELLENT form. Keep it up")
                 }
                 // print("The angle for the spine 7-6 is:\(angleDegShived)");
 
@@ -152,8 +171,10 @@ class BodySkeleton: Entity{
                     let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
                     let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
                     let angleDegShived:Float = (angle * 180 / .pi)
-                if abs(angleDegShived) > 3.5 {
-//                    print("Your back is too bent")
+                if abs(angleDegShived) > 3.5 && currentPos - lowestPos <= 0.2 {
+                    print("Your have BAD form. Your back is too bent")
+                } else {
+                    print("You have EXCELLENT form. Keep it up")
                 }
                 // print("The angle for the spine 6-5 is:\(angleDegShived)");
 
@@ -162,8 +183,10 @@ class BodySkeleton: Entity{
                     let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
                     let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
                     let angleDegShived:Float = (angle * 180 / .pi)
-                if abs(angleDegShived) > 3.5 {
-//                    print("Your upper back is too bent")
+                if abs(angleDegShived) > 3.5 && currentPos - lowestPos <= 0.2 {
+                    print("Your have BAD form. Your upper back is too bent. Consider resetting the barbell")
+                } else {
+                    print("You have EXCELLENT form. Keep it up")
                 }
                 // print("The angle for the necky spine 1-7 is:\(angleDegShived)");
                 
