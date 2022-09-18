@@ -42,7 +42,7 @@ enum Bones: CaseIterable{
         case .leftArmToLeftForarm:
             return "left_arm_joint"
         case .leftForearmToLeftHand:
-            return "left_forearm_jint"
+            return "left_forearm_joint"
             
         case .rightShoulderToRightArm:
             return "right_shoulder_1_joint"
@@ -61,7 +61,7 @@ enum Bones: CaseIterable{
         case .spine7ToSpine6:
             return "spine_7_joint"
         case .spine6ToSpine5:
-            return "spine_6_jint"
+            return "spine_6_joint"
             
         case .hipsToLeftUpLeg:
             return "hips_joint"
