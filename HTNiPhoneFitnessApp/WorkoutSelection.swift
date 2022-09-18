@@ -4,7 +4,6 @@
 //
 //  Created by Nicholas Abraham Sigurdsson on 2022-09-17.
 //
-
 import SwiftUI
 struct WorkoutSelection: View {
     var body: some View {
@@ -68,7 +67,6 @@ struct Parameter: View{
         }
     }
 }
-
 struct Historical: View{
     var body: some View{
         Text("Historical")
@@ -77,7 +75,7 @@ struct Historical: View{
 
 struct Analysis: View{
     var body: some View{
-        Text("Analysis")
+        WorkoutSummary()
     }
 }
 
@@ -87,3 +85,19 @@ struct WorkoutSelection_Previews: PreviewProvider {
     }
 }
 
+struct WorkoutSummary: View{
+    @State var number = 100 //connect this to whatever you're getting from the userform
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    var body: some View{
+        Text("Rest Timer\n\(number)")
+            .font(.system(size:30))
+            .multilineTextAlignment(.center)
+            .padding()
+            .onReceive(timer) { _ in
+                if number > 0 {
+                    number -= 1
+                }
+            }
+    }
+}
+          
