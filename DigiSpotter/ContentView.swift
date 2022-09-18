@@ -1,21 +1,16 @@
 //
 //  ContentView.swift
-//  DigiSpotter
+//  BodyTracking2022
 //
-//  Created by Kareem Ghadban on 2022-09-18.
+//  Created by Kareem Ghadban on 2022-09-17.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        ARViewContainer()
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
