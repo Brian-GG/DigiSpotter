@@ -69,13 +69,85 @@ struct Parameter: View{
 }
 struct Historical: View{
     var body: some View{
-        Text("Historical")
+        VStack (spacing:40){
+            VStack (spacing: 15){
+                Text("September 17, 2022")
+                HStack (spacing: 10){
+                    VStack{
+                        Text("Start Time")
+                        Text("19:15")
+                    }
+                    VStack{
+                        Text("End Time")
+                        Text("20:15")
+                    }
+                    VStack{
+                        Text("Rest Time")
+                        Text("0:15")
+                    }
+                    VStack{
+                        Text("# of Rep")
+                        Text("14")
+                    }
+                }
+                HStack (spacing: 15){
+                    VStack{
+                        Text("# of Sets")
+                        Text("15")
+                    }
+                    VStack{
+                        Text("Leg Posture")
+                        Text("Good")
+                    }
+                    VStack{
+                        Text("Back Posture")
+                        Text("Excellent")
+                    }
+                }
+            }
+            VStack (spacing: 15){
+                Text("September 18, 2022")
+                HStack (spacing: 10){
+                    VStack{
+                        Text("Start Time")
+                        Text("23:55")
+                    }
+                    VStack{
+                        Text("End Time")
+                        Text("24:15")
+                    }
+                    VStack{
+                        Text("Rest Time")
+                        Text("0:10")
+                    }
+                    VStack{
+                        Text("# of Rep")
+                        Text("12")
+                    }
+                }
+                HStack (spacing: 10){
+                    VStack{
+                        Text("# of Sets")
+                        Text("11")
+                    }
+                    VStack{
+                        Text("Leg Posture")
+                        Text("Excellent")
+                    }
+                    VStack{
+                        Text("Back Posture")
+                        Text("Excellent")
+                    }
+                }
+            }
+        }
     }
 }
 
 struct Analysis: View{
     var body: some View{
-        WorkoutSummary()
+        Text("")
+        
     }
 }
 
@@ -100,4 +172,5 @@ struct WorkoutSummary: View{
             }
     }
 }
+
           
