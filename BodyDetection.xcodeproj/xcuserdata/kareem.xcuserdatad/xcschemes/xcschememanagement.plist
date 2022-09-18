@@ -4,10 +4,32 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< Updated upstream:BodyDetection.xcodeproj/xcuserdata/kareem.xcuserdatad/xcschemes/xcschememanagement.plist
 		<key>BodyDetection.xcscheme_^#shared#^_</key>
+=======
+		<key>test1 Watch App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>watchtest.xcscheme_^#shared#^_</key>
+>>>>>>> Stashed changes:watchtest/watchtest.xcodeproj/xcuserdata/briangrigore.xcuserdatad/xcschemes/xcschememanagement.plist
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5A4229C228D5B747006C9AE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A4229DD28D5B765006C9AE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
