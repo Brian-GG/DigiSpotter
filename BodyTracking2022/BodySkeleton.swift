@@ -98,6 +98,38 @@ class BodySkeleton: Entity{
                 var angleDegShived:Float = (angle * 180 / .pi) - 45
 //                print("The angle of the bone is:\(angleDegShived)");
             }
+
+            // Spine bone(s)
+            switch boneName {
+                case "spine_7_joint-spine_6_joint":
+                    let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
+                    let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
+                    var angleDegShived:Float = (angle * 180 / .pi) - 45
+                    print("The angle for the spine 7-6 is:\(angleDegShived)");
+
+
+                case "spine_6_joint-spine_5_joint":
+                    let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
+                    let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
+                    var angleDegShived:Float = (angle * 180 / .pi) - 45
+                    print("The angle for the spine 6-5 is:\(angleDegShived)");
+
+                
+                case "neck_1_joint-spine_7_joint":
+                    let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
+                    let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
+                    var angleDegShived:Float = (angle * 180 / .pi) - 45
+                    print("The angle for the necky spine 1-7 is:\(angleDegShived)");
+
+            }
+            if boneName ==  {
+                let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
+                
+                let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
+                var angleDegShived:Float = (angle * 180 / .pi) - 45
+                print("The angle for the spine is:\(angleDegShived)");
+                
+            }
             entity.look(at: skeletonBone.toJoint.position, from: skeletonBone.centerPosition, relativeTo: nil)
             
         }
