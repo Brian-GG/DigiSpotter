@@ -71,7 +71,6 @@ class BodySkeleton: Entity{
                 
                 jointEntity.position = jointEntityOffsetFromRoot + rootPosition
                 jointEntity.orientation = Transform(matrix: jointEntityTranform).rotation
-
             }
         }
         for bone in Bones.allCases{
@@ -82,6 +81,23 @@ class BodySkeleton: Entity{
             else {continue}
             
             entity.position = skeletonBone.centerPosition
+            // Left upper leg bone ->
+            if boneName == "hips_joint-left_upLeg_joint"{
+                let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
+                
+                let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
+                var angleDegShived:Float = (angle * 180 / .pi) - 45
+//                print("The angle of the bone is:\(angleDegShived)");
+            }
+            
+            // Right upper leg bone
+            if boneName == "hips_joint-right_upLeg_joint"{
+                let resultant = simd_make_float3(simd_cross(skeletonBone.toJoint.position, skeletonBone.fromJoint.position))
+                
+                let angle:Float = (abs(resultant.y)) / sqrt(pow(resultant.x,2) + pow(resultant.y,2) + pow(resultant.z,2))
+                var angleDegShived:Float = (angle * 180 / .pi) - 45
+//                print("The angle of the bone is:\(angleDegShived)");
+            }
             entity.look(at: skeletonBone.toJoint.position, from: skeletonBone.centerPosition, relativeTo: nil)
             
         }
