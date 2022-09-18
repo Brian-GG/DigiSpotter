@@ -11,6 +11,11 @@
 		14DE077328D6893C004D2F68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE077228D6893C004D2F68 /* ContentView.swift */; };
 		14DE077528D6893D004D2F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DE077428D6893D004D2F68 /* Assets.xcassets */; };
 		14DE077828D6893D004D2F68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DE077728D6893D004D2F68 /* Preview Assets.xcassets */; };
+		14DE077F28D68A65004D2F68 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE077E28D68A65004D2F68 /* ARViewContainer.swift */; };
+		14DE078128D68BDF004D2F68 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE078028D68BDF004D2F68 /* SkeletonJoint.swift */; };
+		14DE078328D68C12004D2F68 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE078228D68C12004D2F68 /* SkeletonBone.swift */; };
+		14DE078528D68CDB004D2F68 /* Bones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE078428D68CDB004D2F68 /* Bones.swift */; };
+		14DE078728D6919D004D2F68 /* BodySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE078628D6919D004D2F68 /* BodySkeleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		14DE077228D6893C004D2F68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		14DE077428D6893D004D2F68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14DE077728D6893D004D2F68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		14DE077E28D68A65004D2F68 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		14DE078028D68BDF004D2F68 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
+		14DE078228D68C12004D2F68 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
+		14DE078428D68CDB004D2F68 /* Bones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bones.swift; sourceTree = "<group>"; };
+		14DE078628D6919D004D2F68 /* BodySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySkeleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,11 @@
 			children = (
 				14DE077028D6893C004D2F68 /* BodyTracking2022App.swift */,
 				14DE077228D6893C004D2F68 /* ContentView.swift */,
+				14DE077E28D68A65004D2F68 /* ARViewContainer.swift */,
+				14DE078028D68BDF004D2F68 /* SkeletonJoint.swift */,
+				14DE078228D68C12004D2F68 /* SkeletonBone.swift */,
+				14DE078428D68CDB004D2F68 /* Bones.swift */,
+				14DE078628D6919D004D2F68 /* BodySkeleton.swift */,
 				14DE077428D6893D004D2F68 /* Assets.xcassets */,
 				14DE077628D6893D004D2F68 /* Preview Content */,
 			);
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DE078728D6919D004D2F68 /* BodySkeleton.swift in Sources */,
 				14DE077328D6893C004D2F68 /* ContentView.swift in Sources */,
+				14DE078528D68CDB004D2F68 /* Bones.swift in Sources */,
+				14DE078328D68C12004D2F68 /* SkeletonBone.swift in Sources */,
 				14DE077128D6893C004D2F68 /* BodyTracking2022App.swift in Sources */,
+				14DE077F28D68A65004D2F68 /* ARViewContainer.swift in Sources */,
+				14DE078128D68BDF004D2F68 /* SkeletonJoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +290,13 @@
 				DEVELOPMENT_TEAM = BYQ52Y5GYG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to enable AR features";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +321,13 @@
 				DEVELOPMENT_TEAM = BYQ52Y5GYG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to enable AR features";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
